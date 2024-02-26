@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ToolbarComponent from "./components/ToolbarComponent";
+import "./App.css";
+import {
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import CitasComponent from "./components/CitasComponent";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ToolbarComponent />
+      <Container
+        fixed
+        style={{
+          padding: 8,
+          gap: 16,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Card>
+          <CardContent
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "nowrap",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Typography variant="h2">Bienvenido Administrador</Typography>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/7280/7280951.png"
+              height={70}
+              width={70}
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1818/1818405.png"
+              height={70}
+              width={70}
+            />
+          </CardContent>
+        </Card>
+        <CitasComponent />
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
